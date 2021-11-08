@@ -1,0 +1,14 @@
+.circle-test{
+    height: 32px;
+    width: 32px;
+    background-color: #e5e8ee;
+    opacity: .8;
+    color: #292b2c;
+    border-radius: 50%;
+    display: inline-block;
+    font-family: "Arial Black";
+    font-size: 18px;
+    display: flex; /* or inline-flex */
+    align-items: center;
+    justify-content: center;
+}
