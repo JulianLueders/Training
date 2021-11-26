@@ -18,6 +18,7 @@ import Config from "./Pages/Config";
 import {getCurrentUser, getUserGroups} from "../util/APIUtils";
 import DynamicSideBar from "../@jumbo/components/AppLayout/partials/SideBar/DynamicSideBar";
 import {GroupLive} from "./Pages/Live/GroupLive";
+import MailAnalytics from "./Pages/MailAnalytics";
 
 const RestrictedRoute = ({ component: Component, ...rest }) => {
   const { authUser } = useSelector(({ auth }) => auth);
@@ -56,6 +57,7 @@ const Routes = () => {
       <Switch>
         <Route path="/sample-page" component={SamplePage} />
           <RestrictedRoute path="/analytics" component={Analytics} />
+          <RestrictedRoute path="/mail" component={MailAnalytics} />
           <RestrictedRoute path="/projections" component={Times} />
           <RestrictedRoute path="/table" component={DetailedTable} />
           <RestrictedRoute path="/groups" component={Groups} />

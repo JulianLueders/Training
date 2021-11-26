@@ -35,6 +35,7 @@ export default class Analytics extends Component {
 
 
     componentDidMount() {
+        monthOverview().then(response => console.log(response));
         monthOverview().then(response => this.setState({data: response}));
         allDaily().then(response => this.setState({dataday: response}));
         testUrl2().then(response => this.setState({groupdata: response}));

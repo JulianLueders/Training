@@ -220,6 +220,13 @@ export function setAnalyticsMonthOrDay(msg){
     });
 }
 
+export function setAcdConfig(msg){
+    return request({
+        url: API_BASE_URL + "/config/update?id=acd&value="+msg,
+        method: 'POST',
+    });
+}
+
 export function addWallboardConfig(name){
     return request({
         url: API_BASE_URL + "/wallboard/addConfig?name="+name,

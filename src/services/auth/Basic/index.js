@@ -22,12 +22,12 @@ const BasicAuth = {
   onLogin: ({ email, password }) => {
     return dispatch => {
       console.log("success")
-      const loginRequest = Object.assign({}, {username: email, password: password});
-      loginRestAPI(loginRequest)
+      const loginRequest = Object.assign({}, {usernameOrEmail: email, password: password});
+      login(loginRequest)
           .then(response => {
-            localStorage.setItem(ACCESS_TOKEN_ROMICO, response.accessToken);
+            localStorage.setItem(ACCESS_TOKEN, response.accessToken);
             const user = {name: 'Admin', email: email, password: password};
-            getCurrentUserRestAPI(email)
+            getCurrentUser(email)
                 .then(response => {
                   localStorage.setItem('user', JSON.stringify(response));
                   dispatch(setAuthUser(user));

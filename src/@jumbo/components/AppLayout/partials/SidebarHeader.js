@@ -70,7 +70,7 @@ const SidebarHeader = () => {
                 <Typography className={classes.userTitle} component="h3" variant="h6">
               {user.username == 'root' ? ("Admin Romico") : user.username}
             </Typography>
-            <Typography className={classes.userSubTitle}>{user.name2 + " " + user.name1}</Typography>
+            <Typography className={classes.userSubTitle}>{user.email}</Typography>
           </Box>): (<div></div>)}
           <ArrowDropDownIcon />
         </Box>

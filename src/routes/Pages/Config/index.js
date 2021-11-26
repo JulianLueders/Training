@@ -4,7 +4,7 @@ import {
     addMessage,
     deleteMessage,
     getConfigValue,
-    getLiveMessages, getUserGroups,
+    getLiveMessages, getUserGroups, setAcdConfig,
     setAnalyticsMonthOrDay,
     setAnalyticsTime
 } from "../../../util/APIUtils";
@@ -64,6 +64,7 @@ export default class Config extends Component{
         getConfigValue('month').then(response => console.log(response));
 
         getConfigValue('month').then(response => this.setState({config: (response.value == 'false' ? false : true)}));
+        getConfigValue('acd').then(response => this.setState({acd: (response.value == 'false' ? false : true)}));
         getUserGroups().then(response => this.setState({groups: this.setOptions(response)}));
     }
 
@@ -71,6 +72,7 @@ export default class Config extends Component{
         super(props);
         this.state = {liveMessages: null, config: null};
         this.handleChangeMonth = this.handleChangeMonth.bind(this);
+        this.handleChangeAcd = this.handleChangeAcd.bind(this);
 
     }
 
@@ -82,7 +84,12 @@ export default class Config extends Component{
 
     handleChangeMonth(checked) {
         this.setState({ config: checked });
-        setAnalyticsMonthOrDay(checked);
+        setAnalyticsMonthOrDay(checked).then(r => console.log("success"));
+    }
+
+    handleChangeAcd(checked) {
+        this.setState({ acd: checked });
+        setAcdConfig(checked).then(r => console.log("success"));
     }
 
     componentWillUnmount() {
@@ -122,6 +129,9 @@ export default class Config extends Component{
                                     <div>
                                         <label>In Monaten</label>     <br/>
                                         {this.state.config != null ? (<Switch onChange={this.handleChangeMonth} checked={this.state.config} />) : (null)}
+                                        <br/>
+                                        <label>Gruppenauswertung ACD</label>     <br/>
+                                        {this.state.acd != null ? (<Switch onChange={this.handleChangeAcd} checked={this.state.acd} />) : (null)}
                                     </div>
                                 </form>
                             </CardContent>
