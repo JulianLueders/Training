@@ -12,7 +12,6 @@ import CmtFooter from '../../../../../@coremat/CmtLayouts/Vertical/Footer';
 import Footer from '../../partials/Footer';
 import clsx from 'clsx';
 import Customizer from "./Customizer";
-import {getUserGroups} from "../../../../../util/APIUtils";
 import DynamicSideBar from "../../partials/SideBar/DynamicSideBar";
 
 export default function VerticalDefault ({ className, children }) {
@@ -21,9 +20,9 @@ export default function VerticalDefault ({ className, children }) {
     AppContext,
   );
     //setSideBar(<SideBar/>)
-    React.useEffect(() => {
-        getUserGroups().then(response => setSideBar(<DynamicSideBar data={response}/>))
-    }, [])
+  //  React.useEffect(() => {
+   //     getUserGroups().then(response => setSideBar(<DynamicSideBar data={response}/>))
+   // }, [])
 
   return (
     <CmtVerticalLayout

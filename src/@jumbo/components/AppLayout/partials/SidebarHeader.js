@@ -68,7 +68,7 @@ const SidebarHeader = () => {
           {user != null ?
               (<Box mr={2}>
                 <Typography className={classes.userTitle} component="h3" variant="h6">
-              {user.username == 'root' ? ("Admin Romico") : user.username}
+              {user.username == 'root' ? ("Julian Lüders") : user.username}
             </Typography>
             <Typography className={classes.userSubTitle}>{user.email}</Typography>
           </Box>): (<div></div>)}

@@ -7,18 +7,13 @@ import Error404 from './Pages/404';
 import Login from './Auth/Login';
 import Register from './Auth/Register';
 import ForgotPasswordPage from './Auth/ForgotPassword';
-import Analytics from "./Pages/Analytics";
 import PrivateRoute from "../util/PrivateRoute";
-import Times from "./Pages/Times";
 import DetailedTable from "./Pages/DetailedTable";
-import Groups from "./Pages/Groups";
 import Support from "./Pages/Support";
-import Live from "./Pages/Live";
 import Config from "./Pages/Config";
 import {getCurrentUser, getUserGroups} from "../util/APIUtils";
 import DynamicSideBar from "../@jumbo/components/AppLayout/partials/SideBar/DynamicSideBar";
-import {GroupLive} from "./Pages/Live/GroupLive";
-import MailAnalytics from "./Pages/MailAnalytics";
+import Questions from "./Pages/Questions";
 
 const RestrictedRoute = ({ component: Component, ...rest }) => {
   const { authUser } = useSelector(({ auth }) => auth);
@@ -56,18 +51,12 @@ const Routes = () => {
     <React.Fragment>
       <Switch>
         <Route path="/sample-page" component={SamplePage} />
-          <RestrictedRoute path="/analytics" component={Analytics} />
-          <RestrictedRoute path="/mail" component={MailAnalytics} />
-          <RestrictedRoute path="/projections" component={Times} />
           <RestrictedRoute path="/table" component={DetailedTable} />
-          <RestrictedRoute path="/groups" component={Groups} />
           <RestrictedRoute path="/support" component={Support} />
-          <RestrictedRoute path="/live" component={Live} />
           <RestrictedRoute path="/config" component={Config} />
-          <RestrictedRoute path="/group/:id" component={({match}) => (
-              <GroupLive id={match.params.id} />
+          <RestrictedRoute path="/questions/:quiz/:mode" component={({match}) => (
+              <Questions mode={match.params.mode} quiz={match.params.quiz} />
           )} />
-
           <Route path="/signin" component={Login} />
         <Route path="/signup" component={Register} />
         <Route path="/forgot-password" component={ForgotPasswordPage} />

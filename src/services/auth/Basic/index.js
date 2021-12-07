@@ -3,7 +3,6 @@ import { setAuthUser, setForgetPassMailSent, updateLoadUser } from '../../../red
 import React from 'react';
 import {getCurrentUser, login} from "../../../util/APIUtils";
 import {ACCESS_TOKEN, ACCESS_TOKEN_ROMICO} from "../../../constants";
-import {getCurrentUserRestAPI, loginRestAPI} from "../../../util/RomicoAPIUtils";
 
 const BasicAuth = {
   onRegister: ({ name, email, password }) => {

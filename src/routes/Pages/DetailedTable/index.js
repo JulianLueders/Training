@@ -1,13 +1,7 @@
 
 import React, {Component} from 'react';
-import {testUrl3} from "../../../util/APIUtils";
-import {Table, TableHead, TableRow} from "@material-ui/core";
-import TableCell from "@material-ui/core/TableCell";
 import PageContainer from "../../../@jumbo/components/PageComponents/layouts/PageContainer";
 import GridContainer from "../../../@jumbo/components/GridContainer";
-import CardHeader from "@material-ui/core/CardHeader";
-import CardContent from "@material-ui/core/CardContent";
-import Card from "@material-ui/core/Card";
 import EnhancedTable from "./EnhancedTable";
 
 
@@ -23,7 +17,6 @@ export default class DetailedTable extends Component{
         document.body.appendChild(script);
     }
     componentDidMount() {
-        testUrl3().then(response => this.setState({tabledata: response}));
     }
 
     render() {

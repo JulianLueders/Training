@@ -36,21 +36,14 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-const DynamicSideBar = (data) => {
+const DynamicSideBar = () => {
     const classes = useStyles();
     const dispatch = useDispatch();
 
     let groups = [];
-    console.log(data)
     const user = dispatch(AuhMethods[CurrentAuthMethod].getCurrentAuthUser()).payload;
     console.log("USER")
     console.log(user)
-    data.data.map(e => groups.push({
-        name: e.group_name,
-        icon: <Group />,
-        type: 'item',
-        link: '/group/'+e.id,
-    }))
     let navigationMenus = [
         {
             name: 'Auswertungen',
@@ -103,14 +96,7 @@ const DynamicSideBar = (data) => {
                     icon: <Dashboard />,
                     type: 'item',
                     link: '/live',
-                },
-                {
-                    name: 'Gruppen-Wallboard',
-                    icon: <GroupWork />,
-                    type: 'collapse',
-                    link: '/live',
-                    children: groups,
-                },
+                }
             ],
         },
         {
@@ -132,46 +118,7 @@ const DynamicSideBar = (data) => {
             ],
         },
     ];
-    if(user != null){
-        console.log("User not  NULL")
-       let group = null;
-       for(let i = 0; i < data.data.length; i++){
-           if(data.data[i].id == user.name){
-               group = data.data[i]
-           }
-       }
-        if(group != null) {
-            navigationMenus = [
-                {
-                    name: 'Auswertungen',
-                    type: 'section',
-                    children: [
-                        {
-                            name: 'Home',
-                            icon: <Home/>,
-                            type: 'item',
-                            link: '/sample-page',
-                        },
-                        {
-                            name: 'Gruppen-Wallboard',
-                            icon: <GroupWork/>,
-                            type: 'collapse',
-                            link: '/live',
-                            children: [{
-                                name: "Gruppenansicht: "+group.group_name,
-                                icon: <Group/>,
-                                type: 'item',
-                                link: '/group/' + user.name,
-                            }],
-                        },
-                    ],
-                }
-            ];
-        }
-    }else{
-        console.log("USER-NULL")
-       return <SideBar/>
-    }
+
 
     return (
         <PerfectScrollbar className={classes.perfectScrollbarSidebar}>

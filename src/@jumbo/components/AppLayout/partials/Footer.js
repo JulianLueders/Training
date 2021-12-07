@@ -31,20 +31,20 @@ const Footer = props => {
           <FooterLogo mr={5} color={themeType === THEME_TYPES.DARK ? 'white' : ''} />
         </Hidden>
         <Box fontSize={{ xs: 12, sm: 14 }} component="p" color="text.disabled">
-          Copyright Romico © {date.getFullYear()}
+          Copyright PilotStats © {date.getFullYear()}
         </Box>
       </Box>
       <Box display="flex" alignItems="center">
         <Hidden xsDown>
           <Box component="span" fontSize={16} fontWeight={700} color="primary.main" mr={5}>
-            Romico.de
+            PilotStats.de
           </Box>
         </Hidden>
         <Button
           className={classes.btnRoot}
           color="primary"
           variant="contained"
-          href="https://romico.de"
+          href="https://pilotstats.de"
           target="_blank">
           Mehr Infos
         </Button>

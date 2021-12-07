@@ -2,14 +2,8 @@ import React from 'react';
 import CmtVertical from '../../../../../@coremat/CmtNavigation/Vertical';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import makeStyles from '@material-ui/core/styles/makeStyles';
-import {MultilineChart} from "@material-ui/icons";
-import {Assessment} from "@material-ui/icons";
-import {Timeline} from "@material-ui/icons";
-import {Group} from "@material-ui/icons";
-import {Help} from "@material-ui/icons";
-import {Dashboard} from "@material-ui/icons";
+import {AccountBalance, Flag, Help, HighlightOff, Storage} from "@material-ui/icons";
 import {Home} from "@material-ui/icons";
-import {TableChart} from "@material-ui/icons";
 import {Settings} from "@material-ui/icons";
 import {ExitToApp} from "@material-ui/icons";
 
@@ -36,7 +30,7 @@ const SideBar = () => {
   const classes = useStyles();
   const navigationMenus = [
     {
-      name: 'Auswertungen',
+      name: 'Allgemein',
       type: 'section',
       children: [
         {
@@ -50,6 +44,66 @@ const SideBar = () => {
           icon: <Help />,
           type: 'item',
           link: '/support',
+        },
+      ],
+    },
+    {
+      name: 'Theoriefragen BZF',
+      type: 'section',
+      children: [
+        {
+          name: 'Alle Fragen',
+          icon: <Storage />,
+          type: 'item',
+          link: '/questions/bzf/all',
+        },
+        {
+          name: 'Markierte Fragen',
+          icon: <Flag />,
+          type: 'item',
+          link: '/questions/bzf/flag',
+        },
+        {
+          name: 'Falsche Fragen',
+          icon: <HighlightOff />,
+          type: 'item',
+          link: '/questions/bzf/wrong',
+        },
+        {
+          name: 'Prüfungsimulation',
+          icon: <AccountBalance />,
+          type: 'item',
+          link: '/questions/bzf/simulation',
+        },
+      ],
+    },
+    {
+      name: 'Theoriefragen AZF',
+      type: 'section',
+      children: [
+        {
+          name: 'Alle Fragen',
+          icon: <Storage />,
+          type: 'item',
+          link: '/questions/azf/all',
+        },
+        {
+          name: 'Markierte Fragen',
+          icon: <Flag />,
+          type: 'item',
+          link: '/questions/azf/flag',
+        },
+        {
+          name: 'Falsche Fragen',
+          icon: <HighlightOff />,
+          type: 'item',
+          link: '/questions/azf/wrong',
+        },
+        {
+          name: 'Prüfungsimulation',
+          icon: <AccountBalance />,
+          type: 'item',
+          link: '/questions/azf/simulation',
         },
       ],
     },

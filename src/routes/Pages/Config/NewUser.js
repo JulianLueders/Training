@@ -15,7 +15,7 @@ import withReactContent from "sweetalert2-react-content";
 
 const MySwal = withReactContent(Swal);
 
-const NewUser = ({groups}) => {
+const NewUser = () => {
     const [username, setUsername] = useState('Demo User');
     const [name, setName] = useState('Admin');
     const [email, setEmail] = useState('demo@example.com');
@@ -46,7 +46,6 @@ const NewUser = ({groups}) => {
         });
     };
 
-    console.log(groups)
     return(
         <Card>
             <CardHeader className="card-header" title="Benutzer Anlegen"/>
@@ -86,8 +85,8 @@ const NewUser = ({groups}) => {
                     </Box>
                     <InputLabel htmlFor="name-select">Rolle/Berechtigung für:</InputLabel>
                     <Select id="name-select" defaultValue={"Admin"}  onChange={event => setName(event.target.value)}>
-                        <MenuItem value="Admin">Administrator/Supervisor</MenuItem>
-                        {groups}
+                        <MenuItem value="2">AZF</MenuItem>
+                        <MenuItem value="1">BZF</MenuItem>
                     </Select>
                     <br />
                     <br/>

@@ -31,8 +31,8 @@ const defaultTheme = {
       dark: '#020202',
     },
     primary: {
-      main: '#0698c3',
-      dark: '#1076b9',
+      main: '#19528d',//0698c3
+      dark: '#19528d',
       contrastText: '#fff',
     },
     secondary: {
@@ -47,8 +47,8 @@ const defaultTheme = {
     },
     info: {
       light: '#9BE7FD',
-      main: '#0795F4',
-      dark: '#0356AF',
+      main: '#19528d',
+      dark: '#19528d',
     },
     warning: {
       light: '#FFDE99',
@@ -64,7 +64,7 @@ const defaultTheme = {
       bgColor: '#fff',
       textColor: 'rgba(0, 0, 0, 0.6)',
       textDarkColor: 'rgba(0, 0, 0, 0.87)',
-      textActiveColor: '#1076b9',
+      textActiveColor: '#19528d',
       navHoverBgColor: 'rgb(229, 229, 229)',
       navActiveBgColor: 'rgb(239, 229, 253)',
       borderColor: 'rgba(33, 33, 33, 0.08)',
@@ -74,7 +74,7 @@ const defaultTheme = {
       navigationActiveColor: 'rgba(255, 255, 255, 1)',
       textColor: 'rgba(0, 0, 0, 0.6)',
       textDarkColor: 'rgba(0, 0, 0, 0.87)',
-      textActiveColor: '#1076b9',
+      textActiveColor: '#19528d',
       menuHoverBgColor: 'rgb(229, 229, 229)',
       menuActiveBgColor: 'rgb(239, 229, 253)',
     },
